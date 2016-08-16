@@ -46,14 +46,18 @@ void ofApp::update() { // executa a 60fps
 	//verifica se ta apertado
 	if (p1.key_right && p1.velX < 1)
 		p1.velX = p1.velX + p1.speed;
+
 	if (p1.key_left && p1.velX > -1)
 		p1.velX = p1.velX - p1.speed;
+
 	if (p1.key_up && p1.velY > -1)
 		p1.velY = p1.velY - p1.speed;
+
 	if (p1.key_down && p1.velY < 1)
 		p1.velY = p1.velY + p1.speed;
 
-	//atrito
+
+	//regras de atrito
 	if (!p1.key_down && !p1.key_left && !p1.key_right && !p1.key_up) {
 		if (p1.velX > 0) {
 			p1.velX -= p1.atrito;
@@ -77,17 +81,17 @@ void ofApp::update() { // executa a 60fps
 		}
 	}
 
-	//parando o player
-	/*if (!p1.key_right && !p1.key_left)
-	p1.velX = 0;
-	if (!p1.key_up && !p1.key_down)
-	p1.velY = 0;*/
+
+	
+
 }
+
 
 //--------------------------------------------------------------
 void ofApp::draw() {
 	ofDrawCircle(p1.posX, p1.posY, p1.radius);
 }
+
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
@@ -104,6 +108,7 @@ void ofApp::keyPressed(int key) {
 	}
 }
 
+
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key) {
 	if (game_state == "game") {
@@ -118,45 +123,54 @@ void ofApp::keyReleased(int key) {
 	}
 }
 
+
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y) {
 
 }
+
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button) {
 
 }
 
+
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button) {
 
 }
+
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button) {
 
 }
 
+
 //--------------------------------------------------------------
 void ofApp::mouseEntered(int x, int y) {
 
 }
+
 
 //--------------------------------------------------------------
 void ofApp::mouseExited(int x, int y) {
 
 }
 
+
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h) {
 
 }
 
+
 //--------------------------------------------------------------
 void ofApp::gotMessage(ofMessage msg) {
 
 }
+
 
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo) {
